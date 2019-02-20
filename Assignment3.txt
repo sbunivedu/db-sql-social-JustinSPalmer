@@ -18,4 +18,3 @@
     where h1.ID=l.ID1
         AND h2.ID=l.ID2
         AND (h1.grade-h2.grade)>=2;
-
