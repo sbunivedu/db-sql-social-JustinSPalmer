@@ -1,0 +1,20 @@
+1.  Select h2.name
+    from Highschooler h, Highschooler h2, Friend
+    where h.name='Gabriel' AND h.ID=Friend.ID2 AND Friend.ID1=h2.ID;
+
+2.  Select name, grade
+    from Highschooler
+    where ID NOT IN
+              (Select ID
+                from Likes l, Highschooler h
+                where l.ID1=h.ID OR l.ID2=h.ID);
+
+3.  Select name, grade
+    from Highschooler h, Likes l
+    where l.ID2=h.ID AND h.ID>2;
+
+4.  Select h1.name,h1.grade,h2.name,h2.grade
+    from Highschooler h1, Highshcooler h2, Likes l
+    where h1.ID=l.ID1
+        AND h2.ID=l.ID2
+        AND (h1.grade-h2.grade)>=2;
